@@ -1,0 +1,73 @@
+import React from "react";
+import BasicLayout from "../../layouts/BasicLayout";
+
+export default function Home() {
+  return (
+    <BasicLayout className="home">
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+      <h2>Home...</h2>
+    </BasicLayout>
+  );
+}

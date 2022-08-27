@@ -1,17 +1,53 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button, Spinner } from "react-bootstrap";
+import { values, size } from "lodash";
+import { toast } from "react-toastify";
+import { isEmailValid } from "../../utils/validations";
+import { signUpApi } from "../../services/api/auth";
 import "./SignUpForm.scss";
 
 export default function SignUpForm(props) {
   const { setShowModal } = props;
 
+  const [formData, setFormData] = useState(initialState());
+  const [signUpLoading, setSignUpLoading] = useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
-    setShowModal(false);
-    console.log(formData);
-  };
 
-  const [formData, setFormData] = useState(initialState());
+    let validCount = 0;
+    values(formData).some((value) => {
+      value && validCount++;
+      return null;
+    });
+    if (validCount !== size(formData)) {
+      toast.warning("Completa todos los campos del formulario.");
+    } else if (!isEmailValid(formData.email)) {
+      toast.warning("Email Invalido.");
+    } else if (formData.password !== formData.repeatPassword) {
+      toast.warning("No coincide el password.");
+    } else if (formData.password.length < 6) {
+      toast.warning("La password tiene que tener al menos 6 caracteres.");
+    } else {
+      setSignUpLoading(true);
+      signUpApi(formData)
+        .then((res) => {
+          if (res.code) {
+            toast.warning(res.message);
+          } else {
+            toast.success("El registro ha sido correcto.");
+            setShowModal(false);
+            setFormData(initialState());
+          }
+        })
+        .catch(() => {
+          toast.error("Error del servidor. Intentelo mas tarde.");
+        })
+        .finally(() => {
+          setSignUpLoading(false);
+        });
+    }
+  };
 
   const onChange = (e) => {
     e.preventDefault();
@@ -71,7 +107,7 @@ export default function SignUpForm(props) {
           </Row>
         </Form.Group>
         <Button variant="primary" type="submit">
-          Registrate
+          {!signUpLoading ? "Registrate" : <Spinner animation="border" />}
         </Button>
       </Form>
     </div>

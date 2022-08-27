@@ -1,6 +1,6 @@
-@import "../../scss/index.scss";
+@import '../../scss/colors';
 
-.sign-up-form{
+.sign-in-form{
   h2{
     font-weight: bold;
     padding-bottom: 30px;
@@ -9,18 +9,18 @@
   .form-group{
     padding-bottom: 20px;
 
-    input {
+    input{
       font-size: 25px;
     }
   }
 
-  button {
+  button{
     width: 100%;
     font-size: 20px;
     font-weight: bold;
     padding: 15px;
     border-radius: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
 
     .spinner-border{
       width: 25px;
